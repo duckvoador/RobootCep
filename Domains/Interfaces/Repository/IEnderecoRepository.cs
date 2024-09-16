@@ -6,8 +6,8 @@ namespace Domains.Interfaces.Repository
     {
         Task Add(List<Endereco> enderecos);
         Task AtualizarDados(Endereco endereco);
-        Task<Endereco> ObterCepParaTratamento(string robo0);
-        Task<Endereco> Get(int id);
+        Task<Endereco?> ObterCepParaTratamento(string robo0);
+        Task<Endereco?> Get(int id);
         Task<List<Endereco>> List();
     }
 }
