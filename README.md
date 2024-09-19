@@ -1,10 +1,10 @@
-# RobotCep
+# RobotCep#
 
-## Comando gerar container Docker com Banco Postgresql:
-### Cria o volume para armazenar dados:  docker volume create meu_volume
-### Cria container com senha e volume: docker run -p 5432:5432 -e POSTGRES_PASSWORD=123456 -v meu_volume:/var/lib/postgresql/data -d postgres
+## Comando gerar container Docker com Banco Postgresql:##
+### Cria o volume para armazenar dados:  docker volume create meu_volume##
+### Cria container com senha e volume: docker run -p 5432:5432 -e POSTGRES_PASSWORD=123456 -v meu_volume:/var/lib/postgresql/data -d postgres##
 
-##Consulta para criação do banco experimnetal:
+## Consulta para criação do banco experimnetal: ##
 ### CREATE TABLE "Endereco" (
 	"Id" serial  PRIMARY KEY,
 	"CEP" VARCHAR (15),
@@ -15,4 +15,4 @@
 	"Robo" VARCHAR(20)
 ) ;
 SELECT "Id", "CEP", "Logradouro", "Bairro", "US", "Status", "Robo"
-FROM public."Endereco";
+FROM public."Endereco"; ###
