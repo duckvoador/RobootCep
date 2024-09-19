@@ -47,7 +47,7 @@ namespace Application.Services
             domain.Status = Domains.Enums.EnumStatus.EmAndamento;
             domain.Robo = robo0;
 
-            _repository.AtualizarDados(domain);
+            await _repository.AtualizarDados(domain);
             return EnderecoAdapter.Map(domain);
         }
     }
