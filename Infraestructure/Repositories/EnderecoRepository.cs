@@ -1,6 +1,7 @@
 ﻿using Domains.Entidades;
 using Domains.Interfaces.Repository;
 using EFCore.BulkExtensions;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,12 +43,17 @@ namespace Infraestructure.Repositories
 
         public async Task<Endereco?> ObterCepParaTratamento(string robo0)
         {
-            var cep = _context.Enderecos.Where(x =>
-            (x.Status == Domains.Enums.EnumStatus.EmAndamento && x.Robo == robo0)
-                ||
-            (x.Status == Domains.Enums.EnumStatus.Aberto && string.IsNullOrEmpty(x.Robo))
-            ).FirstOrDefault();
+            var cepWorking = _context.Enderecos.Where(x => x.Status == Domains.Enums.EnumStatus.EmAndamento && x.Robo == robo0).FirstOrDefault();
+
+            if (cepWorking != null) 
+            { 
+                return cepWorking; 
+            }
+            
+            var cep = _context.Enderecos.Where(x => x.Status == Domains.Enums.EnumStatus.Aberto && string.IsNullOrEmpty(x.Robo)).FirstOrDefault();
             return cep;
+
+            
         }
     }
 }

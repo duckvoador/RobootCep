@@ -44,6 +44,10 @@ namespace Application.Services
         public async Task<EnderecoModel> ObterCepParaTratamento(string robo0)
         {
             var domain = await _repository.ObterCepParaTratamento(robo0);
+            if (domain == null) // comit 20/09/2024
+            {
+                throw new Exception("Nada a ser Atualizado");
+            }
             domain.Status = Domains.Enums.EnumStatus.EmAndamento;
             domain.Robo = robo0;
 

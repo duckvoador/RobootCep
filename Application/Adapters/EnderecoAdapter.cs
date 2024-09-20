@@ -16,6 +16,7 @@ namespace Application.Adapters
             model.Id = endereco.Id;
             model.CEP = endereco.CEP;
             model.Logadouro = endereco.Logadouro;
+            model.Bairro = endereco.Bairro;
             model.UF = endereco.UF;
             return model;
         }
@@ -25,6 +26,7 @@ namespace Application.Adapters
             model.Id = endereco.Id;
             model.CEP = endereco.CEP;
             model.Logadouro = endereco.Logadouro;
+            model.Bairro = endereco.Bairro;
             model.UF = endereco.UF;
             return model;
         }
